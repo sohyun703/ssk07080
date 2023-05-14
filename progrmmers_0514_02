@@ -1,0 +1,5 @@
+a, b = map(int, input().strip().split(' '))
+k = '*'
+
+for i in range(b):
+    print(k*a)
