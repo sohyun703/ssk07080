@@ -1,0 +1,9 @@
+def solution(a, b):
+    k =a*b
+    while b>0:
+        a,b= b,a%b
+        
+        answer = []
+        answer.append(a)
+        answer.append(k/a)
+    return answer
