@@ -9,13 +9,13 @@ using System.IO;
 public class email : MonoBehaviour
 {
     public String emailAddress;
-    //string path = "Assets/text/";
+    private String path = System.IO.Path.Combine(Application.streamingAssetsPath, "Result.txt");
 
-   /* private void Start()
+  /*  private void Start()
     {
-        FileInfo file = new FileInfo(strFilePath);
+        FileInfo file = new FileInfo(path);
         file.IsReadOnly = false;
-        File.Delete(strFilePath);
+        File.Delete(path);
 
     }*/
 
@@ -35,9 +35,9 @@ public class email : MonoBehaviour
         ServicePointManager.ServerCertificateValidationCallback =
             delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
             { return true; };
-        /*System.Net.Mail.Attachment attachment;
+        System.Net.Mail.Attachment attachment;
         attachment = new System.Net.Mail.Attachment(path);
-        mail.Attachments.Add(attachment);*/
+        mail.Attachments.Add(attachment);
         smtpServer.Send(mail);
         Debug.Log("success");
 
@@ -48,7 +48,7 @@ public class email : MonoBehaviour
     {
         if (other.tag == "end")
         {
-            send();
+            Invoke("send", 1f);
             Debug.Log("Àü¼Û");
 
         }
