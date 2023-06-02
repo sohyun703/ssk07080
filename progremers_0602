@@ -1,0 +1,17 @@
+def solution(s, n):
+    answer = ''
+    for i in range (len(s)):
+        dd =''
+        if s[i] != ' ': 
+            aski_ord  = ord(s[i])
+            aski_new = ord(s[i])+n
+            if 90>=aski_ord>=65 and aski_new>90:
+                aski_new-=26
+            elif 122>=aski_ord>=97 and aski_new>122:
+                aski_new -=26
+            dd = chr(aski_new)
+            answer += dd
+        else :
+            answer += ' '
+    
+    return answer
