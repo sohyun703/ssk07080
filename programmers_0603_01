@@ -1,0 +1,11 @@
+def solution(sizes):
+    #1. 2차원 배열 중에서 가장 큰 수 선택
+#2. 배열을 순환하면서 두번째 숫자를 선택해줌 -> 이때 두번재로 큰 숫자가 이 녀석보다 크다면 숫자를 교환해준다.
+    large = max(map(max,sizes))
+    min_sizes=0
+    for i in range(len(sizes)):
+        mia= min(sizes[i])
+        if min_sizes<mia:
+            min_sizes =mia
+    answer = large*min_sizes
+    return answer
