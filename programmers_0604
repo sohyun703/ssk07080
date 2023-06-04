@@ -1,0 +1,18 @@
+
+def solution(t, p):
+    #t를 p의 개수로 나누기
+    #리스트 인덱싱 기능 활용
+    array=[]
+    #t를 p의 개수로 나누기
+    for i in range(0,len(t)-len(p)+1):
+        a= t[i:i+len(p)]
+        array.append(a)
+        
+    list_int = list(map(int,array))
+    
+    result=[]
+    for i in list_int:
+        if i<=int(p):
+            result.append(i)
+            
+    return len(result)
